@@ -12,3 +12,12 @@ deployment:
 
     # Install PHP dependencies
     - /usr/local/bin/composer install --no-dev --optimize-autoloader
+
+    # Run Laravel migrations (optional, if you want auto DB updates)
+    - php artisan migrate --force
+
+    # Clear and cache configurations
+    - php artisan config:clear
+    - php artisan config:cache
+    - php artisan route:cache
+    - php artisan view:clear
