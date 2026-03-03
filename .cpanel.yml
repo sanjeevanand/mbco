@@ -9,3 +9,6 @@ deployment:
 
     # Move into deployment path
     - cd $DEPLOYPATH
+
+    # Install PHP dependencies
+    - /usr/local/bin/composer install --no-dev --optimize-autoloader
